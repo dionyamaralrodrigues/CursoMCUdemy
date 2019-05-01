@@ -3,9 +3,9 @@ package com.cursomc.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cursomc.domain.Estado;
+import com.cursomc.domain.Endereco;
 
 @Repository
-public interface EstadoRepository extends JpaRepository<Estado, Integer>{
+public interface EnderecoRepository extends JpaRepository<Endereco, Integer>{
 
 }
