@@ -1,15 +1,15 @@
 package com.cursomc.domain.enums;
 
+public enum EstadoPagamento {
 
-public enum TipoCliente {
-
-	PESSOA_FISICA(1, "Pessoa Física"),
-	PESSOA_JURIDICA(2, "Pessoa Jurídica");
+	PENDENTE(0, "Pagamento em aberto"),
+	QUITADO(90, "Pagamento concluído"),
+	CANCELADO(80, "Pagamento cancelado");
 	
 	private int codigo;
 	private String descricao;
 	
-	private TipoCliente(int cod, String desc){
+	private EstadoPagamento(int cod, String desc){
 		this.codigo = cod;
 		this.descricao = desc;
 	}
@@ -22,13 +22,13 @@ public enum TipoCliente {
 		return descricao;
 	}
 	
-	public static TipoCliente toEnum(Integer cod) {
+	public static EstadoPagamento toEnum(Integer cod) {
 		
 		if (cod == null) {
 			return null;
 		}
 		
-		for (TipoCliente x : TipoCliente.values()) {
+		for (EstadoPagamento x : EstadoPagamento.values()) {
 			if (cod.equals(x.getCodigo())) {
 				return x;
 			}
@@ -37,5 +37,4 @@ public enum TipoCliente {
 		throw new IllegalArgumentException("Id Inválido: " + cod);
 		
 	}
-	
 }
